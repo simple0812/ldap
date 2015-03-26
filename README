@@ -1,0 +1,38 @@
+1.安装命ldap令行工具 
+brew search openldap
+brew install openldap
+
+2.配置slapd.conf
+cd /etc/openldap
+sudo cp slapd.conf.default slapd.conf
+sudo vim slapd.conf
+
+添加：
+include  C:/openldap/etc/schema/cosine.schema
+include  C:/openldap/etc/schema/inetorgperson.schema(此行不加 objectclass inetorgperson  不能使用)
+
+修改：
+slapdpasswd -s 123456 得到加密的密码xxxx
+修改rootpw  xxxx
+
+suffix
+rootdn
+
+
+3.启动
+sudo slapd -d3
+slapd starting 表示启动成功
+
+4.添加数据
+ldapadd -x -D"cn=Manager,dc=xish,dc=com" -W -f base.ldif
+Enter LDAP Password: 
+adding new entry "ou=RD,dc=xish,dc=com"
+
+adding new entry "ou=BD,dc=xish,dc=com"
+
+adding new entry "cn=zl,ou=RD,dc=xish,dc=com"
+
+5.客户端工具 JXplorer
+6.ldapjs : http://ldapjs.org/
+
+

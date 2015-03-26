@@ -1,0 +1,20 @@
+
+dn: ou=RD,dc=xish,dc=com
+objectClass: organizationalUnit
+ou: RD
+
+dn: ou=BD,dc=xish,dc=com
+objectClass: organizationalUnit
+ou: BD
+
+dn: cn=zl,ou=RD,dc=xish,dc=com
+objectClass: inetOrgPerson
+cn: zl
+cn: zhanglei
+description: leige
+mail: zhanglei@xish.com
+postalAddress: jianshedajia
+postalCode: 200030
+sn: zl
+telephoneNumber: 18221754915
+title: software
